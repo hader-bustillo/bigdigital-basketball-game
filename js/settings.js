@@ -12,7 +12,8 @@ var DISABLE_SOUND_MOBILE = false;
 
 var SOUNDTRACK_VOLUME_IN_GAME = 0.5;
 
-var PRIMARY_FONT = "comfortaa";
+var PRIMARY_FONT = "Boodle-Black";
+var PRIMARY_FONT_REGULAR = "Boodle-Regular";
 var CUSTOM_TEXT_FONT = "Georgia"
 var PRIMARY_FONT_COLOUR = "#ee590b";
 var SECONDARY_FONT_COLOUR = "#000000";

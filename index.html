@@ -53,10 +53,27 @@
 </head>
 
 <body ondragstart="return false;" ondrop="return false;">
+    <video autoplay muted style="z-index: 4; position: relative; width: 100%;" id="introCTA">
+      <source src="intro.mp4" type="video/mp4" /><!-- Safari / iOS video    -->
+    </video>
     <div style="position: fixed; background-color: transparent; top: 0px; left: 0px; width: 100%; height: 100%"></div>
     <script>
 
         $(document).ready(function () {
+            const introCTA = document.getElementById('introCTA');
+
+            function showIntro() {
+              $(introCTA).show();
+              introCTA.play();
+            }
+
+            $(introCTA).on('click', () => {
+              $(introCTA).hide();
+
+              introCTA.pause(); 
+              introCTA.currentTime = 0;
+            });
+
             var oMain = new CMain({
                 player_lives: 3,                    // HOW MANY LIVES THE PLAYER WILL START WITH
                 ball_points: 1,                     // HOW MANY POINTS A SINGLE SCORE IS VALUED
@@ -79,6 +96,8 @@
             });
 
             $(oMain).on("end_session", function (evt) {
+                showIntro()
+
                 if (getParamValue('ctl-arcade') === "true") {
                     parent.__ctlArcadeEndSession();
                 }

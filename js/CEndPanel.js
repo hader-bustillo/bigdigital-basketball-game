@@ -46,7 +46,7 @@ function CEndPanel(iScore) {
         oUNPanel_1.regX = oUserNamePane_1.width / 2;
         oUNPanel_1.regY = oUserNamePane_1.height / 2;
         oUNPanel_1.x = CANVAS_WIDTH_HALF - 200;
-        oUNPanel_1.y = CANVAS_HEIGHT_HALF + 100;
+        oUNPanel_1.y = CANVAS_HEIGHT_HALF - 13;
         _oPanelContainer.addChild(oUNPanel_1);
 
         var oUserNamePane_2 = s_oSpriteLibrary.getSprite('bg_name');
@@ -55,7 +55,7 @@ function CEndPanel(iScore) {
         oUNPanel_2.regY = oUserNamePane_2.height / 2;
         // oUNPanel_2.x = CANVAS_WIDTH_HALF - 156;
         oUNPanel_2.x = CANVAS_WIDTH_HALF;
-        oUNPanel_2.y = CANVAS_HEIGHT_HALF + 100;
+        oUNPanel_2.y = CANVAS_HEIGHT_HALF - 13;
         _oPanelContainer.addChild(oUNPanel_2);
 
         var oUserNamePane_3 = s_oSpriteLibrary.getSprite('bg_name');
@@ -63,7 +63,7 @@ function CEndPanel(iScore) {
         oUNPanel_3.regX = oUserNamePane_1.width / 2;
         oUNPanel_3.regY = oUserNamePane_1.height / 2;
         oUNPanel_3.x = CANVAS_WIDTH_HALF + 200;
-        oUNPanel_3.y = CANVAS_HEIGHT_HALF + 100;
+        oUNPanel_3.y = CANVAS_HEIGHT_HALF - 13;
         _oPanelContainer.addChild(oUNPanel_3);
 
         _oPanelContainer.y = CANVAS_HEIGHT + oSprite.height / 2;
@@ -74,13 +74,13 @@ function CEndPanel(iScore) {
 
         // var iX = CANVAS_WIDTH_HALF - 156;
         var iX = CANVAS_WIDTH_HALF;
-        var iY = CANVAS_HEIGHT_HALF;
+        var iY = CANVAS_HEIGHT_HALF-110;
         var iWidth = 550;
         var iHeight = 120;
 
         new CTLText(_oPanelContainer,
             iX - iWidth / 2, iY + 200, iWidth, iHeight,
-            30, "center", PRIMARY_FONT_COLOUR_WHITE, PRIMARY_FONT, 1,
+            56, "center", PRIMARY_FONT_COLOUR_WHITE, PRIMARY_FONT_REGULAR, 1,
             2, 2,
             TEXT_YOUR_NAME,
             true, true, true,
@@ -93,8 +93,8 @@ function CEndPanel(iScore) {
         var iHeight = 150;
 
         new CTLText(_oPanelContainer,
-            iX - iWidth / 2, iY - iHeight / 2, iWidth, iHeight,
-            65, "center", PRIMARY_FONT_COLOUR_WHITE, PRIMARY_FONT, 1,
+            iX - iWidth / 2, (iY - iHeight * 1.5) - 3, iWidth, iHeight,
+            76, "center", PRIMARY_FONT_COLOUR_WHITE, PRIMARY_FONT, 1,
             2, 2,
             TEXT_GAMEOVER,
             true, true, true,
@@ -107,8 +107,8 @@ function CEndPanel(iScore) {
         var iHeight = 120;
 
         new CTLText(_oPanelContainer,
-            iX - iWidth / 2, iY - iHeight / 2, iWidth, iHeight,
-            40, "center", PRIMARY_FONT_COLOUR_WHITE, PRIMARY_FONT, 1,
+            iX - iWidth / 2, (iY - iHeight * 1.5) - 65, iWidth, iHeight,
+            65, "center", PRIMARY_FONT_COLOUR_WHITE, PRIMARY_FONT, 1,
             2, 2,
             TEXT_YOUR_SCORE,
             true, true, true,
@@ -121,8 +121,8 @@ function CEndPanel(iScore) {
         var iHeight = 200;
 
         new CTLText(_oPanelContainer,
-            iX - iWidth / 2, iY - iHeight / 2, iWidth, iHeight,
-            100, "center", PRIMARY_FONT_COLOUR_WHITE, PRIMARY_FONT, 1,
+            iX - iWidth / 2, iY - iHeight - 63, iWidth, iHeight + 27,
+            250, "center", PRIMARY_FONT_COLOUR_WHITE, PRIMARY_FONT, 1,
             2, 2,
             (iScore === "" || iScore === 0) ? "0" : iScore,
             true, true, true,
@@ -152,7 +152,7 @@ function CEndPanel(iScore) {
             typingNameIndex--;
         } else if (typingNameIndex < 3 && c !== "Delete" && c !== "Enter") {
             nameLetterRect[typingNameIndex] = new CTLText(_oPanelContainer,
-                240 + 200 * typingNameIndex, 970, 200, 200,
+                240 + 200 * typingNameIndex, 850, 200, 200,
                 80, "center", PRIMARY_FONT_COLOUR, PRIMARY_FONT, 1,
                 2, 2,
                 c,
@@ -284,11 +284,11 @@ function CEndPanel(iScore) {
 
         for (var i = 0; i < keyboard_list.length; i++) {
             if (i < 11) {
-                _oKeyboardList[i] = new CBGTextButton(120 + i * 80, 1340, i < 10 ? 65 : 120, 65, s_oSpriteLibrary.getSprite('bg_btn'), keyboard_list[i].key_name, PRIMARY_FONT, SECONDARY_FONT_COLOUR, 12, _oPanelContainer);
+                _oKeyboardList[i] = new CBGTextButton(120 + i * 80, 1240, i < 10 ? 65 : 120, 65, s_oSpriteLibrary.getSprite('bg_btn'), keyboard_list[i].key_name, PRIMARY_FONT, SECONDARY_FONT_COLOUR, 12, _oPanelContainer);
             } else if (i < 21) {
-                _oKeyboardList[i] = new CBGTextButton(160 + (i - 11) * 80, 1420, i < 20 ? 65 : 125, 65, s_oSpriteLibrary.getSprite('bg_btn'), keyboard_list[i].key_name, PRIMARY_FONT, SECONDARY_FONT_COLOUR, 12, _oPanelContainer);
+                _oKeyboardList[i] = new CBGTextButton(160 + (i - 11) * 80, 1320, i < 20 ? 65 : 125, 65, s_oSpriteLibrary.getSprite('bg_btn'), keyboard_list[i].key_name, PRIMARY_FONT, SECONDARY_FONT_COLOUR, 12, _oPanelContainer);
             } else {
-                _oKeyboardList[i] = new CBGTextButton(290 + (i - 21) * 80, 1500, i < 28 ? 65 : 160, 65, s_oSpriteLibrary.getSprite('bg_btn'), keyboard_list[i].key_name, PRIMARY_FONT, SECONDARY_FONT_COLOUR, 12, _oPanelContainer);
+                _oKeyboardList[i] = new CBGTextButton(290 + (i - 21) * 80, 1400, i < 28 ? 65 : 160, 65, s_oSpriteLibrary.getSprite('bg_btn'), keyboard_list[i].key_name, PRIMARY_FONT, SECONDARY_FONT_COLOUR, 12, _oPanelContainer);
             }
         }
 

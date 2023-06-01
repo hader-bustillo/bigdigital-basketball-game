@@ -23,7 +23,7 @@ CTLText.prototype = {
                     break;
                 }
             };
-            
+
             this._iFontSize = iFontSize;
         }       
         

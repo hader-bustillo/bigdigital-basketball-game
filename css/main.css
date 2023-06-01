@@ -76,7 +76,30 @@ canvas {
         url('comfortaa-bold-webfont.svg#comfortaa') format('svg');
     font-weight: normal;
     font-style: normal;
+}
 
+@font-face {
+  font-family: 'Boodle-Black';
+  src: url('font/boodle-black.eot');
+  src: url('font/boodle-black.eot?#iefix') format('embedded-opentype'),
+      url('font/boodle-black.woff2') format('woff2'),
+      url('font/boodle-black.woff') format('woff'),
+      url('font/boodle-black.ttf') format('truetype'),
+      url('font/boodle-black.svg#comfortaa') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+	font-family: 'Boodle-Regular';
+	src: url('font/boodle-regular.eot');
+	src: url('font/boodle-regular.eot?#iefix') format('embedded-opentype'),
+             url('font/boodle-regular.woff2') format('woff2'),
+	     url('font/boodle-regular.woff') format('woff'),
+	     url('font/boodle-regular.ttf') format('truetype'),
+	     url('font/boodle-regular.svg#youworkforthem') format('svg');
+	font-weight: normal;
+	font-style: normal;
 }
 
 
