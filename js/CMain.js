@@ -131,6 +131,7 @@ function CMain(oData) {
         s_oSpriteLibrary.addSprite("but_home", "./sprites/but_home.png");
         s_oSpriteLibrary.addSprite("msg_box", "./sprites/msg_box.png");
         s_oSpriteLibrary.addSprite("msg_box_big", "./sprites/msg_box_big.png");
+        s_oSpriteLibrary.addSprite("msg_high_scores", "./sprites/msg_high_scores.png");
         s_oSpriteLibrary.addSprite("msg_box_scan", "./sprites/msg_box_scan.png");
         s_oSpriteLibrary.addSprite("but_credits", "./sprites/but_credits.png");
         s_oSpriteLibrary.addSprite("logo_ctl", "./sprites/logo_ctl.png");

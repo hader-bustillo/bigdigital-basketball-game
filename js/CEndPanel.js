@@ -45,7 +45,7 @@ function CEndPanel(iScore) {
         var oUNPanel_1 = createBitmap(oUserNamePane_1);
         oUNPanel_1.regX = oUserNamePane_1.width / 2;
         oUNPanel_1.regY = oUserNamePane_1.height / 2;
-        oUNPanel_1.x = CANVAS_WIDTH_HALF - 200;
+        oUNPanel_1.x = CANVAS_WIDTH_HALF - 120;
         oUNPanel_1.y = CANVAS_HEIGHT_HALF - 13;
         _oPanelContainer.addChild(oUNPanel_1);
 
@@ -54,17 +54,17 @@ function CEndPanel(iScore) {
         oUNPanel_2.regX = oUserNamePane_2.width / 2;
         oUNPanel_2.regY = oUserNamePane_2.height / 2;
         // oUNPanel_2.x = CANVAS_WIDTH_HALF - 156;
-        oUNPanel_2.x = CANVAS_WIDTH_HALF;
+        oUNPanel_2.x = CANVAS_WIDTH_HALF+ 120;
         oUNPanel_2.y = CANVAS_HEIGHT_HALF - 13;
         _oPanelContainer.addChild(oUNPanel_2);
 
-        var oUserNamePane_3 = s_oSpriteLibrary.getSprite('bg_name');
-        var oUNPanel_3 = createBitmap(oUserNamePane_3);
-        oUNPanel_3.regX = oUserNamePane_1.width / 2;
-        oUNPanel_3.regY = oUserNamePane_1.height / 2;
-        oUNPanel_3.x = CANVAS_WIDTH_HALF + 200;
-        oUNPanel_3.y = CANVAS_HEIGHT_HALF - 13;
-        _oPanelContainer.addChild(oUNPanel_3);
+        // var oUserNamePane_3 = s_oSpriteLibrary.getSprite('bg_name');
+        // var oUNPanel_3 = createBitmap(oUserNamePane_3);
+        // oUNPanel_3.regX = oUserNamePane_1.width / 2;
+        // oUNPanel_3.regY = oUserNamePane_1.height / 2;
+        // oUNPanel_3.x = CANVAS_WIDTH_HALF + 200;
+        // oUNPanel_3.y = CANVAS_HEIGHT_HALF - 13;
+        // _oPanelContainer.addChild(oUNPanel_3);
 
         _oPanelContainer.y = CANVAS_HEIGHT + oSprite.height / 2;
         _pStartPanelPos = { x: _oPanelContainer.x, y: _oPanelContainer.y };
@@ -80,7 +80,7 @@ function CEndPanel(iScore) {
 
         new CTLText(_oPanelContainer,
             iX - iWidth / 2, iY + 200, iWidth, iHeight,
-            56, "center", PRIMARY_FONT_COLOUR_WHITE, PRIMARY_FONT_REGULAR, 1,
+            55, "center", PRIMARY_FONT_COLOUR_WHITE, PRIMARY_FONT_REGULAR, 1,
             2, 2,
             TEXT_YOUR_NAME,
             true, true, true,
@@ -131,11 +131,11 @@ function CEndPanel(iScore) {
         this.loadKeyBoard();
 
         // _oButExit = new CGfxButton(CANVAS_WIDTH_HALF - 156 - 130, 1100, s_oSpriteLibrary.getSprite('but_home'), _oPanelContainer);
-        _oButExit = new CGfxButton(CANVAS_WIDTH_HALF - 200, 1700, s_oSpriteLibrary.getSprite('but_home'), _oPanelContainer);
+        _oButExit = new CGfxButton(CANVAS_WIDTH_HALF - 220, 1606, s_oSpriteLibrary.getSprite('but_home'), _oPanelContainer);
         _oButExit.addEventListener(ON_MOUSE_UP, this._onExit, this);
 
         // _oButRestart = new CGfxButton(CANVAS_WIDTH_HALF - 156 + 130, 1100, s_oSpriteLibrary.getSprite('but_restart'), _oPanelContainer);
-        _oButRestart = new CGfxButton(CANVAS_WIDTH_HALF + 200, 1700, s_oSpriteLibrary.getSprite('but_restart'), _oPanelContainer);
+        _oButRestart = new CGfxButton(CANVAS_WIDTH_HALF + 220, 1606, s_oSpriteLibrary.getSprite('but_restart'), _oPanelContainer);
         _oButRestart.addEventListener(ON_MOUSE_UP, this._onNext, this);
 
 
@@ -144,15 +144,15 @@ function CEndPanel(iScore) {
     };
 
     this.typingName = function (c) {
-        if (c === "Delete" && typingNameIndex > 0 && typingNameIndex < 3) {
+        if (c === "Delete" && typingNameIndex > 0 && typingNameIndex < 2) {
             nameLetterRect[typingNameIndex - 1].refreshText("");
             typingNameIndex--;
-        } else if (c === "Delete" && typingNameIndex === 3) {
+        } else if (c === "Delete" && typingNameIndex === 2) {
             nameLetterRect[typingNameIndex - 1].refreshText("");
             typingNameIndex--;
-        } else if (typingNameIndex < 3 && c !== "Delete" && c !== "Enter") {
+        } else if (typingNameIndex < 2 && c !== "Delete" && c !== "Enter") {
             nameLetterRect[typingNameIndex] = new CTLText(_oPanelContainer,
-                240 + 200 * typingNameIndex, 850, 200, 200,
+                240 + 240 * typingNameIndex + 80, 850, 200, 200,
                 80, "center", PRIMARY_FONT_COLOUR, PRIMARY_FONT, 1,
                 2, 2,
                 c,
@@ -276,19 +276,19 @@ function CEndPanel(iScore) {
                 "key_id": 27,
                 "key_name": "M"
             },
-            // {
-            //     "key_id": 28,
-            //     "key_name": " "
-            // }
+            {
+                "key_id": 28,
+                "key_name": " "
+            }
         ]
 
         for (var i = 0; i < keyboard_list.length; i++) {
             if (i < 11) {
-                _oKeyboardList[i] = new CBGTextButton(120 + i * 80, 1240, i < 10 ? 65 : 120, 65, s_oSpriteLibrary.getSprite('bg_btn'), keyboard_list[i].key_name, PRIMARY_FONT, SECONDARY_FONT_COLOUR, 12, _oPanelContainer);
+                _oKeyboardList[i] = new CBGTextButton(120 + i * 80, 1200, i < 10 ? 65 : 120, 65, s_oSpriteLibrary.getSprite('bg_btn'), keyboard_list[i].key_name, PRIMARY_FONT, SECONDARY_FONT_COLOUR, 12, _oPanelContainer);
             } else if (i < 21) {
-                _oKeyboardList[i] = new CBGTextButton(160 + (i - 11) * 80, 1320, i < 20 ? 65 : 125, 65, s_oSpriteLibrary.getSprite('bg_btn'), keyboard_list[i].key_name, PRIMARY_FONT, SECONDARY_FONT_COLOUR, 12, _oPanelContainer);
+                _oKeyboardList[i] = new CBGTextButton(160 + (i - 11) * 80, 1290, i < 20 ? 65 : 125, 65, s_oSpriteLibrary.getSprite('bg_btn'), keyboard_list[i].key_name, PRIMARY_FONT, SECONDARY_FONT_COLOUR, 12, _oPanelContainer);
             } else {
-                _oKeyboardList[i] = new CBGTextButton(290 + (i - 21) * 80, 1400, i < 28 ? 65 : 160, 65, s_oSpriteLibrary.getSprite('bg_btn'), keyboard_list[i].key_name, PRIMARY_FONT, SECONDARY_FONT_COLOUR, 12, _oPanelContainer);
+                _oKeyboardList[i] = new CBGTextButton(220 + (i - 21) * 80, 1380, i < 28 ? 65 : 160, 65, s_oSpriteLibrary.getSprite('bg_btn'), keyboard_list[i].key_name, PRIMARY_FONT, SECONDARY_FONT_COLOUR, 12, _oPanelContainer);
             }
         }
 
@@ -309,35 +309,35 @@ function CEndPanel(iScore) {
         var iY = CANVAS_HEIGHT_HALF - 200;
         var iWidth = 200;
         var iHeight = 100;
-        new CTLText(_oPanelContainer,
-            iX - iWidth - 100, iY - iHeight - 100, 600, 200,
-            80, "center", PRIMARY_FONT_COLOUR_WHITE, PRIMARY_FONT, 1,
-            2, 2,
-            "HIGH SCORE",
-            true, true, true,
-            false);
+        // new CTLText(_oPanelContainer,
+        //     iX - iWidth - 100, iY - iHeight - 100, 600, 200,
+        //     80, "center", PRIMARY_FONT_COLOUR_WHITE, PRIMARY_FONT, 1,
+        //     2, 2,
+        //     "HIGH SCORE",
+        //     true, true, true,
+        //     false);
 
         for (var i = 0; i < scoreList.length; i++) {
-            if (i > 9) continue;
+            if (i > 8) continue;
             new CTLText(_oPanelContainer,
-                iX - iWidth / 2 - 200, iY - iHeight / 2 + 80 * i, iWidth, iHeight,
-                60, "center", PRIMARY_FONT_COLOUR_WHITE, PRIMARY_FONT, 1,
+                iX - iWidth / 2 - 270, iY - (iHeight / 2 + 230 ) + 110 * i, iWidth, iHeight,
+                80, "center", PRIMARY_FONT_COLOUR_WHITE, PRIMARY_FONT, 1,
                 2, 2,
                 (i + 1),
                 true, true, true,
                 false);
 
             new CTLText(_oPanelContainer,
-                iX - iWidth / 2 - 25, iY - iHeight / 2 + 80 * i, iWidth, iHeight,
-                60, "center", PRIMARY_FONT_COLOUR_WHITE, PRIMARY_FONT, 1,
+                iX - iWidth / 2 - 25, iY - (iHeight / 2 + 230 ) + 110 * i, iWidth, iHeight,
+                80, "center", PRIMARY_FONT_COLOUR_WHITE, PRIMARY_FONT, 1,
                 2, 2,
                 scoreList[i].score === 0 ? "0" : scoreList[i].score,
                 true, true, true,
                 false);
 
             new CTLText(_oPanelContainer,
-                iX - iWidth / 2 + 150, iY - iHeight / 2 + 80 * i, iWidth, iHeight,
-                60, "center", PRIMARY_FONT_COLOUR_WHITE, PRIMARY_FONT, 1,
+                iX - iWidth / 2 + 230, iY - (iHeight / 2 + 230 ) + 110 * i, iWidth, iHeight,
+                80, "center", PRIMARY_FONT_COLOUR_WHITE, PRIMARY_FONT, 1,
                 2, 2,
                 scoreList[i].name,
                 true, true, true,
@@ -375,7 +375,7 @@ function CEndPanel(iScore) {
 
         createjs.Tween.get(_oFade).to({ alpha: 0.7 }, 500);
 
-        var oSprite = s_oSpriteLibrary.getSprite('msg_box_big');
+        var oSprite = s_oSpriteLibrary.getSprite('msg_high_scores');
         var oPanel = createBitmap(oSprite);
         oPanel.regX = oSprite.width / 2;
         oPanel.regY = oSprite.height / 2 - 200;
@@ -387,7 +387,7 @@ function CEndPanel(iScore) {
         this.loadHighScores();
 
         // _oButExit = new CGfxButton(CANVAS_WIDTH_HALF - 156, 1100, s_oSpriteLibrary.getSprite('but_home'), _oPanelContainer);
-        _oButExit = new CGfxButton(CANVAS_WIDTH_HALF, 1600, s_oSpriteLibrary.getSprite('but_home'), _oPanelContainer);
+        _oButExit = new CGfxButton(CANVAS_WIDTH_HALF, 1660, s_oSpriteLibrary.getSprite('but_home'), _oPanelContainer);
         _oButExit.addEventListener(ON_MOUSE_UP, this._onExit, this);
 
 
@@ -404,7 +404,7 @@ function CEndPanel(iScore) {
         var name = _oName.join("");
         var score = iScore === "" ? 0 : iScore;
 
-        if (nameLetterRect.length === 3) {
+        if (nameLetterRect.length === 2) {
             var scoreList = JSON.parse(localStorage.getItem("scoreList"));
             if (scoreList === null || scoreList === undefined || scoreList.length === 0) {
                 localStorage.setItem("scoreList", JSON.stringify([{ name: name, score: score }]));

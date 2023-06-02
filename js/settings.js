@@ -16,7 +16,7 @@ var PRIMARY_FONT = "Boodle-Black";
 var PRIMARY_FONT_REGULAR = "Boodle-Regular";
 var CUSTOM_TEXT_FONT = "Georgia"
 var PRIMARY_FONT_COLOUR = "#ee590b";
-var SECONDARY_FONT_COLOUR = "#000000";
+var SECONDARY_FONT_COLOUR = "#7a7a7d";
 
 var PRIMARY_FONT_COLOUR_WHITE = "#FFFFFF";
 
