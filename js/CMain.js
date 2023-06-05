@@ -136,8 +136,8 @@ function CMain(oData) {
         s_oSpriteLibrary.addSprite("but_credits", "./sprites/but_credits.png");
         s_oSpriteLibrary.addSprite("logo_ctl", "./sprites/logo_ctl.png");
         s_oSpriteLibrary.addSprite("but_fullscreen", "./sprites/but_fullscreen.png");
-        s_oSpriteLibrary.addSprite("bg_menu", "./sprites/v2/bg_menu.jpg");
-        s_oSpriteLibrary.addSprite("bg_game", "./sprites/v2/bg_menu.jpg");
+        s_oSpriteLibrary.addSprite("bg_menu", "./sprites/v2/bg_menu.png");
+        s_oSpriteLibrary.addSprite("bg_game", "./sprites/v2/bg_game.png");
         s_oSpriteLibrary.addSprite("bg_name", "./sprites/v2/field_item.png");
         s_oSpriteLibrary.addSprite("bg_btn", "./sprites/v2/bg_btn.png");
         s_oSpriteLibrary.addSprite("but_no", "./sprites/but_no.png");
